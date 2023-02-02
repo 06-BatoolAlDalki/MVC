@@ -11,6 +11,7 @@ namespace _31_1_prepare.Controllers
         // GET: ViewBag
         public ActionResult Index()
         {
+
             return View();
         }
     }

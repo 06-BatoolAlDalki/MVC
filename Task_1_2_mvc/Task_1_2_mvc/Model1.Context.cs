@@ -27,5 +27,7 @@ namespace Task_1_2_mvc
     
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+
+        public System.Data.Entity.DbSet<Task_1_2_mvc.Models.Employee> Employees { get; set; }
     }
 }

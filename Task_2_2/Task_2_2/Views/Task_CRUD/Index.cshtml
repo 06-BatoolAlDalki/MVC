@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table table-hover table-striped">
     <tr>
         <th>
           First Name
@@ -58,11 +58,11 @@
         <td>
             @if (item.Gender == true)
             {
-                <span>Female</span>
+                <span>Male</span>
             }
             else
             {
-                <span>Male</span>
+                <span>Female</span>
             }
 
             @*@Html.DisplayFor(modelItem => item.Gender)*@

@@ -96,6 +96,14 @@
 
                 @*@Html.DisplayFor(modelItem => item.Gender)*@
             </td>
+
+            <td>
+                <img src="../image/@item.image" style="width:100px;" />
+                @*//  <img src="../image/@item.image" width="50" height="50" />*@
+            </td>
+            <td>
+                <a href="Download?CV=@item.CV">@item.CV</a>
+            </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |

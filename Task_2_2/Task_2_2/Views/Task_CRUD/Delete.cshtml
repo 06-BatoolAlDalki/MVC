@@ -66,7 +66,7 @@
         <dd>
             @if (Model.Gender == true)
             {
-               <span>Male</span>
+                <span>Male</span>
             }
             else
             {
@@ -74,7 +74,13 @@
             }
 
         </dd>
+        <dt>
+            <img src="~/image/@Model.image" style="width:100px;" />
+        </dt>
 
+        <dd>
+            <a href="Download?CV=@Model.CV">@Model.CV</a>
+        </dd>
     </dl>
 
     @using (Html.BeginForm()) {

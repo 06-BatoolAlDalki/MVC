@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MVCModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Task_CRUD">
           <Key>
             <PropertyRef Name="Id" />
@@ -17,12 +17,13 @@
           <Property Name="Age" Type="int" />
           <Property Name="Job_Title" Type="varchar" MaxLength="50" />
           <Property Name="Gender" Type="bit" />
+          <Property Name="image" Type="varchar" MaxLength="50" />
+          <Property Name="CV" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="MVCModelStoreContainer">
           <EntitySet Name="Task_CRUD" EntityType="Self.Task_CRUD" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MVCModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -38,6 +39,8 @@
           <Property Name="Age" Type="Int32" />
           <Property Name="Job_Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Gender" Type="Boolean" />
+          <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="MVCEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Task_CRUD" EntityType="Self.Task_CRUD" />
@@ -51,6 +54,8 @@
           <EntitySetMapping Name="Task_CRUD">
             <EntityTypeMapping TypeName="MVCModel.Task_CRUD">
               <MappingFragment StoreEntitySet="Task_CRUD">
+                <ScalarProperty Name="CV" ColumnName="CV" />
+                <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="farst_Name" ColumnName="farst_Name" />
                 <ScalarProperty Name="Last_Name" ColumnName="Last_Name" />

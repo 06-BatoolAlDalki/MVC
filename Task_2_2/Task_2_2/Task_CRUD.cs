@@ -29,7 +29,7 @@ namespace Task_2_2
         [EmailAddress]
         public string Email { get; set; }
         [Required]
-         [RegularExpression(@"^(0)?[7]{1}[8|9|7]{1}[0-9]{7}$")]
+        [RegularExpression(@"^(0)?[7]{1}[8|9|7]{1}[0-9]{7}$")]
         public Nullable<int> Phone { get; set; }
 
         [Required]
@@ -41,5 +41,7 @@ namespace Task_2_2
         [MaxLength(10)]
         public string Job_Title { get; set; }
         public Nullable<bool> Gender { get; set; }
+        public string image { get; set; }
+        public string CV { get; set; }
     }
 }

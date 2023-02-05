@@ -26,7 +26,5 @@ namespace Task_2_2
         }
     
         public virtual DbSet<Task_CRUD> Task_CRUD { get; set; }
-
-        public System.Data.Entity.DbSet<Task_2_2.Models.User> Users { get; set; }
     }
 }

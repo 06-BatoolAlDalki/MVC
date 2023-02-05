@@ -11,17 +11,39 @@ namespace Task_5_2
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Web;
 
     public partial class Task_CRUD
     {
         public int Id { get; set; }
+
+        [Required]
+        [StringLength(12)]
+        [Display (Name ="First Name")]
         public string farst_Name { get; set; }
+
+        [Required]
+        [StringLength(12)]
+        [Display (Name ="Last Name")]
         public string Last_Name { get; set; }
+
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
+        [Required]
+        [RegularExpression(@"^(0)?[7]{1}[8|9|7]{1}[0-9]{7}$")]
         public Nullable<int> Phone { get; set; }
+
+        [Required]
+        [Range(18, 50)]
         public Nullable<int> Age { get; set; }
+
+
+        [Required]
+        [MaxLength(10)]
+        [Display (Name ="Job Tilte")]
         public string Job_Title { get; set; }
         public Nullable<bool> Gender { get; set; }
         public string image { get; set; }

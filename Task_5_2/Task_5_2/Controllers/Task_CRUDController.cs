@@ -16,9 +16,33 @@ namespace Task_5_2.Controllers
         private MVCEntities db = new MVCEntities();
 
         // GET: Task_CRUD
-        public ActionResult Index()
+        public ActionResult Index(string searchString, string searchBy)
         {
-            return View(db.Task_CRUD.ToList());
+            var task = from t in db.Task_CRUD select t;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                switch (searchBy)
+                {
+                    case "First Name":
+                        task = task.Where(s => s.farst_Name.Contains(searchString));
+                        break;
+                    case "Last Name":
+                        task = task.Where(s => s.Last_Name.Contains(searchString));
+                        break;
+                    case "Email":
+                        task = task.Where(s => s.Email.Contains(searchString));
+                        break;
+                    default:
+                        task = task.Where(s => s.farst_Name.Contains(searchString) || s.Last_Name.Contains(searchString) || s.Job_Title.Contains(searchString) || s.Age.ToString().Equals(searchString));
+                        break;
+                }
+            }
+            if (task.ToList().Count <= 0 || searchString == "")
+            {
+                ViewBag.SearchString = "Not Found";
+            }
+            return View(task.ToList());
         }
 
         // GET: Task_CRUD/Details/5

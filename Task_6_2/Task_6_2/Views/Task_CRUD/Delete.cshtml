@@ -64,7 +64,14 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Gender)
+            @if (Model.Gender == true)
+            {
+                <span>Female</span>
+            }
+            else
+            {
+                <span>Male</span>
+            }
         </dd>
 
         <dt>
@@ -72,7 +79,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.image)
+            <img  src="~/image/@Model.image" width="50" height="50"/>
         </dd>
 
         <dt>
@@ -80,7 +87,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.CV)
+           <a href="Index" download>@Model.CV</a>
         </dd>
 
     </dl>

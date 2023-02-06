@@ -54,10 +54,26 @@ namespace Task_6_2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,farst_Name,Last_Name,Email,Phone,Age,Job_Title,Gender,image,CV")] Task_CRUD task_CRUD)
+        public ActionResult Create(Task_CRUD task_CRUD , HttpPostedFileBase image , HttpPostedFileBase CV)
         {
             if (ModelState.IsValid)
             {
+                if(image !=null)
+                {
+
+                    string path = Server.MapPath("~/image/")+image.FileName;
+                    image.SaveAs(path);
+                    task_CRUD.image = image.FileName;
+                }
+
+                if(CV !=null)
+                {
+                    string path = Server.MapPath("~/CV/")+CV.FileName;
+                    CV.SaveAs(path);
+                    task_CRUD.CV = CV.FileName;
+                }
+
+
                 db.Task_CRUD.Add(task_CRUD);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -74,6 +90,8 @@ namespace Task_6_2.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Task_CRUD task_CRUD = db.Task_CRUD.Find(id);
+            Session["image"] = task_CRUD.image;
+            Session["cv"]=task_CRUD.CV;
             if (task_CRUD == null)
             {
                 return HttpNotFound();
@@ -86,17 +104,40 @@ namespace Task_6_2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,farst_Name,Last_Name,Email,Phone,Age,Job_Title,Gender,image,CV")] Task_CRUD task_CRUD)
+        public ActionResult Edit(Task_CRUD task_CRUD, HttpPostedFileBase image, HttpPostedFileBase CV)
         {
+            task_CRUD.image = Session["image"].ToString();
+            task_CRUD.CV = Session["cv"].ToString();
             if (ModelState.IsValid)
             {
+
+                if (image != null)
+                {
+                    //string fileName = Path.GetFileName(image.FileName);
+                    string path = Server.MapPath("~/image/") + image.FileName;
+                    image.SaveAs(path);
+                    task_CRUD.image = image.FileName;
+                }
+
+
+                if (CV != null)
+                {
+                    //string fileName = Path.GetFileName(cv.FileName);
+                    string path = Server.MapPath("~/CV/") + CV.FileName;
+                    CV.SaveAs(path);
+                    task_CRUD.CV = ViewBag.cv;
+                }
+
+
+
                 db.Entry(task_CRUD).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(task_CRUD);
-        }
 
+
+        }
         // GET: Task_CRUD/Delete/5
         public ActionResult Delete(int? id)
         {

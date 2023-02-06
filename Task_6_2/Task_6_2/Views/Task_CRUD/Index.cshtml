@@ -64,13 +64,20 @@
             @Html.DisplayFor(modelItem => item.Job_Title)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Gender)
+           @if(item.Gender== true)
+                {
+                    <span>Male</span>
+           }
+           else
+                {
+                    <span>Female</span>
+                }
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.image)
+           <img src="~/image/@item.image" width="50" height="50" />
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.CV)
+           <a href="Download?CV=@item.CV"  download>@item.CV</a>
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

@@ -20,6 +20,7 @@ namespace Task_6_2
             this.Orders = new HashSet<Order>();
         }
     
+
         public int Id { get; set; }
         public string farst_Name { get; set; }
         public string Last_Name { get; set; }

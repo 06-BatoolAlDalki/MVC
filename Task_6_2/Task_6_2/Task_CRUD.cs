@@ -11,7 +11,8 @@ namespace Task_6_2
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Task_CRUD
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,14 +20,19 @@ namespace Task_6_2
         {
             this.Orders = new HashSet<Order>();
         }
-    
 
+        [Display(Name ="Id")]
         public int Id { get; set; }
+        [Display(Name = "First Name")]
         public string farst_Name { get; set; }
+
+        [Display(Name = "Last Name")]
         public string Last_Name { get; set; }
         public string Email { get; set; }
         public Nullable<int> Phone { get; set; }
         public Nullable<int> Age { get; set; }
+
+        [Display(Name = "Job Tiltle")]
         public string Job_Title { get; set; }
         public Nullable<bool> Gender { get; set; }
         public string image { get; set; }

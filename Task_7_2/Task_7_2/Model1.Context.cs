@@ -27,5 +27,7 @@ namespace Task_7_2
     
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<About> Abouts { get; set; }
     }
 }

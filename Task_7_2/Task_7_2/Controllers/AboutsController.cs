@@ -10,130 +10,112 @@ using Task_7_2;
 
 namespace Task_7_2.Controllers
 {
-    public class ProductsController : Controller
+    public class AboutsController : Controller
     {
         private MVCEntities db = new MVCEntities();
 
-        // GET: Products
+        // GET: Abouts
         public ActionResult Index()
         {
-            var products = db.Products.Include(p => p.Category);
-            return View(products.ToList());
+            return View(db.Abouts.ToList());
         }
-
-        public ActionResult Home()
-        {
-           
-            return View();
-        }
-
-        public ActionResult HomeYa()
-        {
-            var products = db.Products.Include(p => p.Category);
-            return View(products.ToList());
-        }
-
 
         public ActionResult AboutYa()
         {
-            var products = db.Products.Include(p => p.Category);
-            return View(products.ToList());
+            return View(db.Abouts.ToList());
         }
-        // GET: Products/Details/5
+
+        // GET: Abouts/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
+            About about = db.Abouts.Find(id);
+            if (about == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(about);
         }
 
-        // GET: Products/Create
+        // GET: Abouts/Create
         public ActionResult Create()
         {
-            ViewBag.CategoryFK = new SelectList(db.Categories, "CategorId", "CategoryName");
             return View();
         }
 
-        // POST: Products/Create
+        // POST: Abouts/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductId,ProductName,CategoryFK,Stock,image,Dersecription")] Product product)
+        public ActionResult Create([Bind(Include = "Id,Name,Description,image")] About about)
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(product);
+                db.Abouts.Add(about);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.CategoryFK = new SelectList(db.Categories, "CategorId", "CategoryName", product.CategoryFK);
-            return View(product);
+            return View(about);
         }
 
-        // GET: Products/Edit/5
+        // GET: Abouts/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
+            About about = db.Abouts.Find(id);
+            if (about == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CategoryFK = new SelectList(db.Categories, "CategorId", "CategoryName", product.CategoryFK);
-            return View(product);
+            return View(about);
         }
 
-        // POST: Products/Edit/5
+        // POST: Abouts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductId,ProductName,CategoryFK,Stock,image,Dersecription")] Product product)
+        public ActionResult Edit([Bind(Include = "Id,Name,Description,image")] About about)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
+                db.Entry(about).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.CategoryFK = new SelectList(db.Categories, "CategorId", "CategoryName", product.CategoryFK);
-            return View(product);
+            return View(about);
         }
 
-        // GET: Products/Delete/5
+        // GET: Abouts/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
-            if (product == null)
+            About about = db.Abouts.Find(id);
+            if (about == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View(about);
         }
 
-        // POST: Products/Delete/5
+        // POST: Abouts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Product product = db.Products.Find(id);
-            db.Products.Remove(product);
+            About about = db.Abouts.Find(id);
+            db.Abouts.Remove(about);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

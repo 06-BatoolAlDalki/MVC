@@ -255,6 +255,14 @@
     <Content Include="image\icon-2.png" />
     <Content Include="image\icon-3.png" />
     <Content Include="image\logo12.PNG" />
+    <Content Include="image\product-1.jpg" />
+    <Content Include="image\product-2.jpg" />
+    <Content Include="image\product-3.jpg" />
+    <Content Include="image\product-4.jpg" />
+    <Content Include="image\product-5.jpg" />
+    <Content Include="image\product-6.jpg" />
+    <Content Include="image\product-7.jpg" />
+    <Content Include="image\product-8.jpg" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -398,6 +406,7 @@
     <Content Include="Views\Abouts\Edit.cshtml" />
     <Content Include="Views\Abouts\Index.cshtml" />
     <Content Include="Views\Abouts\AboutYa.cshtml" />
+    <Content Include="Views\Shared\_Drop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

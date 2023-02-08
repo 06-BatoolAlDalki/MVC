@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI.WebControls;
 using Task_7_2;
 
 namespace Task_7_2.Controllers
@@ -32,6 +33,16 @@ namespace Task_7_2.Controllers
             var products = db.Products.Include(p => p.Category);
             return View(products.ToList());
         }
+
+
+        public PartialViewResult Drop()
+        {
+            var products = db.Products.ToList();
+            SelectList l = new SelectList(products, "ProductId", "ProductName");
+            ViewBag.m = l;
+            return PartialView("_Drop",products);
+        }
+
 
 
         public ActionResult AboutYa()

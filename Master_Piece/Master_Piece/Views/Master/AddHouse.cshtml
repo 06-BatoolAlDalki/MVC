@@ -1,0 +1,185 @@
+﻿
+@{
+    ViewBag.Title = "AddHouse";
+    Layout = "~/Views/Shared/_navbarAndFooter.cshtml";
+}
+
+<style>
+    body {
+        background-image: url('images\\add7.jpg');
+        width: 100%;
+        height: 200px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+</style>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+@*<div style="background-color:white;width:50%;height:590px;margin-left:25% ;margin-top:80px;border-radius:12px;display:block">
+    <br />
+    <br />
+    <h2 style="position: absolute; text-align: center; margin-left: 5%; ">Add House</h2>
+    <br />
+
+    <hr />
+    <h4 style="margin-left:10%;display:inline-block">Location :</h4>  @Html.TextBox("location")
+    <br />
+    <h4 style="margin-left:10%;display:inline-block">Price :</h4> @Html.TextBox("Price")
+    <br />
+    <h4 style="margin-left:10%;display:inline-block">Properity :</h4>  @Html.TextBox("Properity")
+    <br />
+    <h4 style="margin-left:10%;display:inline-block">Outer Image :</h4>  <input type="file" />
+    <hr />
+    <h4 style="margin-left:10%;display:inline-block">Guest Room :</h4>   <input type="file" />
+    <hr />
+    <h4 style="margin-left:10%;display:inline-block">sitting room :</h4>   <input type="file" />
+    <hr />
+    <h4 style="margin-left:10%;display:inline-block">Kitchen:</h4>  <input type="file" />
+    <hr />
+
+    <h4 style="margin-left:10%;display:inline-block">BathRooms:</h4>  <input type="file" />
+    <hr />
+    <button style="margin-left:44% ; background-color:black;color:gold ;padding:10px; border-radius:12px">Add House</button>
+
+
+
+
+</div>*@
+
+<div class="row container" style="background-color:white;margin-left:9% ;margin-top:5%">
+    <div class="col-md-12 pills">
+        <div class="bd-example bd-example-tabs">
+            <div class="d-flex justify-content-center">
+                <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Description</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Your phone Number</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" id="pills-image-tab" data-toggle="pill" href="#pills-image" role="tab" aria-controls="pills-image" aria-expanded="true">Images</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <ul class="features">
+                                <li class="check"><span class="ion-ios-checkmark"></span>Lot Area  : @Html.TextBox("area")</li>
+                                <li class="check"><span class="ion-ios-checkmark"></span>Bed Rooms: @Html.TextBox("bed")</li>
+                                <li class="check"><span class="ion-ios-checkmark"></span>Bath Rooms: @Html.TextBox("bath")</li>
+                                <li class="check"><span class="ion-ios-checkmark"></span>Luggage</li>
+                                <li class="check"><span class="ion-ios-checkmark"></span>Garage: @Html.TextBox("garage")</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="features">
+                                <li class="check"><span class="ion-ios-checkmark"></span>Floor Area: @Html.TextBox("floor")</li>
+                                <li class="check"><span class="ion-ios-checkmark"></span>Year Build:: @Html.TextBox("year")</li>
+                                <li class="check"><span class="ion-ios-checkmark"></span>Water</li>
+                                <li class="check"><span class="ion-ios-checkmark"></span>Stories: @Html.TextBox("store")</li>
+                                <li class="check"><span class="ion-ios-checkmark"></span>Roofing: @Html.TextBox("roof")</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="features">
+                                <li class="check"><span class="ion-ios-checkmark"></span>Floor Area: 1,300 SQ FT</li>
+                                <li class="check"><span class="ion-ios-checkmark"></span>Year Build:: 2019</li>
+                                <li class="check"><span class="ion-ios-checkmark"></span>Water</li>
+                                <li class="check"><span class="ion-ios-checkmark"></span>Stories: 2</li>
+                                <li class="check"><span class="ion-ios-checkmark"></span>Roofing: New</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+
+                </div>
+
+                <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
+                    <textarea placeholder="description of house"></textarea>
+                </div>
+                <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
+                    <div class="row">
+
+                        <h4 style="text-align:center;margin-left:32%"> Number Phone of Seller : <span style="color:gold">@Html.TextBox("phone")</span></h4>
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="pills-image" role="tabpanel" aria-labelledby="pills-image-tab">
+                    <div class="row">
+
+
+                        <br />
+                        <h4 style="margin-left:10%;display:inline-block">Outer Image :</h4>  <input type="file" />
+                        <hr />
+                        <br />
+                        <h4 style="margin-left:4%;display:inline-block">Guest Room :</h4>   <input type="file" />
+                        <hr />
+                        <br />
+                        <h4 style="margin-left:10%;display:inline-block">sitting room :</h4>   <input type="file" />
+                        <hr />
+                        <br />
+
+                        <h4 style="margin-left:10%;display:inline-block">Kitchen:</h4>  <input type="file" />
+                        <hr />
+                        <br />
+                        <h4 style="margin-left:10%;display:inline-block">BathRooms:</h4>  <input type="file" />
+                        <hr />
+                        <br />
+
+
+
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+            <a href="ProfileUSer"  >  <button style="margin-left:44% ; background-color:black;color:gold ;padding:10px; border-radius:12px">Add House</button></a>
+
+
+                <br />
+                <br />
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<br />
+<br />

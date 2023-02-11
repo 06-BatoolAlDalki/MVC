@@ -1,0 +1,168 @@
+﻿
+@{
+    ViewBag.Title = "Singleproperity";
+    Layout = "~/Views/Shared/_navbarAndFooter.cshtml";
+}
+
+<section class="hero-wrap hero-wrap-2 ftco-degree-bg js-fullheight" style="background-image: url('images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate pb-5 text-center">
+                <h1 class="mb-3 bread">Properties Single</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-property-details">
+    <div class="container">
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" >
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 5"></button>
+
+            </div>
+            <div class="carousel-inner" style="height:440px">
+                <div class="carousel-item active" style="height:440px">
+                    <img src="images/v2.jpg" class="d-block w-100" alt="..." style="height:440px">
+                    <div class="carousel-caption d-none d-md-block">
+
+                    </div>
+                </div>
+                <div class="carousel-item" style="height:440px">
+                    <img src="images/sl2.jpg" class="d-block w-100" alt="..." style="height:440px">
+                    <div class="carousel-caption d-none d-md-block">
+
+                    </div>
+                </div>
+                <div class="carousel-item" style="height:440px">
+                    <img src="images/o5.jpg" class="d-block w-100" alt="..." style="height:440px">
+                    <div class="carousel-caption d-none d-md-block">
+
+                    </div>
+                </div>
+                <div class="carousel-item" style="height:440px">
+                    <img src="images/sl4.jpg" class="d-block w-100" alt="..." style="height:440px">
+                    <div class="carousel-caption d-none d-md-block">
+
+                    </div>
+                </div>
+                <div class="carousel-item" style="height:440px">
+                    <img src="images/sl5.jpg" class="d-block w-100" alt="..." style="height:440px">
+                    <div class="carousel-caption d-none d-md-block">
+
+                    </div>
+                </div>
+                <div class="carousel-item" style="height:440px">
+                    <img src="images/sl6.jpg" class="d-block w-100" alt="..." style="height:440px">
+                    <div class="carousel-caption d-none d-md-block">
+
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev" style=" border: none; color: black; background: no-repeat;">
+                <span class="carousel-control-prev-icon" aria-hidden="true" style="color:black"></span>
+                <span class="visually-hidden"  style="color:gold !important ; font-weight:bold">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next" style=" border: none; color: black; background: no-repeat;">
+                <span class="carousel-control-next-icon" aria-hidden="true"  style="color:black !important ; font-weight:bold" ></span>
+                <span class="visually-hidden" style="color:gold !important ; font-weight:bold">Next</span>
+            </button>
+        </div>
+        @*<div class="row justify-content-center">
+            <div class="col-md-12">
+                <div class="property-details">
+                    <div class="img" style="background-image: url(images/work-1.jpg);"></div>
+                    <div class="text text-center">
+                        <span class="subheading">Oakland</span>
+                        <h2>The Blue Sky Home</h2>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+        <div class="row">
+            <div class="col-md-12 pills">
+                <div class="bd-example bd-example-tabs">
+                    <div class="d-flex justify-content-center">
+                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+                            <li class="nav-item">
+                                <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Features</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Description</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-expanded="true">Call the Seller</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <ul class="features">
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Lot Area: 1,250 SQ FT</li>
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Bed Rooms: 4</li>
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Bath Rooms: 4</li>
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Luggage</li>
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Garage: 2</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="features">
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Floor Area: 1,300 SQ FT</li>
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Year Build:: 2019</li>
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Water</li>
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Stories: 2</li>
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Roofing: New</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <ul class="features">
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Floor Area: 1,300 SQ FT</li>
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Year Build:: 2019</li>
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Water</li>
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Stories: 2</li>
+                                        <li class="check"><span class="ion-ios-checkmark"></span>Roofing: New</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
+                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+                            <p>When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+                        </div>
+                        <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
+                            <div class="row">
+
+                                <h4 style="text-align:center;"> Number Phone of Seller : <span style="color:gold;display:inline">you need to push 50 JD to apper owner phone</span></h4>
+
+                                <h4 style="text-align:center"> Number Phone of Seller : <span style="color:gold;display:inline">0785274466</span></h4>
+                                <br />
+                                <br />
+                                <div style="display:block"></div>
+
+
+
+
+                            </div>
+                          <a href="SignUp">  <button style="background-color:black;color:gold ;padding:6px;margin-left:43% ;border-radius:3px">Request House</button></a>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
